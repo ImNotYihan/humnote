@@ -32,11 +32,11 @@ From the repository root:
 ```sh
 npm ci --prefix frontend
 npm run build --prefix frontend
-./mvnw clean verify
+bash mvnw clean verify
 java -jar target/humnote-1.0.0.jar
 ```
 
-On Windows, use `mvnw.cmd clean verify` instead of `./mvnw clean verify`.
+On Windows, use `mvnw.cmd clean verify` instead of `bash mvnw clean verify`.
 
 Open **http://localhost:8080**. The default bind address is `127.0.0.1`. After packaging, only Java is needed to run the JAR. The first build downloads dependencies; the recognition model is already included in the repository.
 
@@ -47,7 +47,7 @@ Build the frontend before packaging Java; otherwise the JAR will contain the API
 Run the Java API in one terminal:
 
 ```sh
-./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+bash mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 Run the editor in another:
@@ -133,7 +133,7 @@ For internet hosting, place the application behind HTTPS and configure the publi
 ## Tests
 
 ```sh
-./mvnw test
+bash mvnw test
 npm test --prefix frontend
 npm run test:inference --prefix frontend
 npm run build --prefix frontend
